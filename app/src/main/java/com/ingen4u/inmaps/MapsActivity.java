@@ -79,6 +79,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.getUiSettings().setZoomControlsEnabled(true);
         mMap.getUiSettings().setCompassEnabled(true);
         mMap.setMinZoomPreference(11);
+
+        // Ambil Data CCTV, Tempat Saya, dan Iklan
+        this.fetchMapsData();
+    }
+
+    // Fungsi Untuk Mengambil Data CCTV, Tempat Saya, dan Iklan
+    private void fetchMapsData(){
+        // ............
     }
 
     // Tampilkan Tombol Lokasi Saya jika ijin Melacak Lokasi Saya diberikan
@@ -122,5 +130,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    // Event Saat Aplikasi Ditutup
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    // Event Saat Tmbol Back Di Tekan
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        // Keluar Dari Aplikasi
+        finishAffinity();
+    }
 
 }
